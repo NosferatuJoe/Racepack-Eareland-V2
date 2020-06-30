@@ -12,7 +12,6 @@ block load
 	es_load wcs/tools/manifest/annihilation
 	es_load wcs/tools/manifest/darkrai
 	es_load wcs/tools/manifest/flashknifer
-	es_load wcs/tools/manifest/frozen_breath
 	es_load wcs/tools/manifest/human_predator
 	es_load wcs/tools/manifest/seventh_soldier
 	es_load wcs/tools/manifest/soul_rapist
@@ -23,7 +22,6 @@ block unload
 	es_unload wcs/tools/manifest/annihilation
 	es_unload wcs/tools/manifest/darkrai
 	es_unload wcs/tools/manifest/flashknifer
-	es_unload wcs/tools/manifest/frozen_breath
 	es_unload wcs/tools/manifest/human_predator
 	es_unload wcs/tools/manifest/seventh_soldier
 	es_unload wcs/tools/manifest/soul_rapist
