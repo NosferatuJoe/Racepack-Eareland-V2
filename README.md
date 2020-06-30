@@ -11,7 +11,6 @@ All of the 7 races are remastered/reworked versions of Eareland's previously rel
 - Annihilation
 - Darkrai
 - Flashknifer
-- Frozen Breath
 - Human Predator
 - Seventh Soldier
 - Soul Rapist
