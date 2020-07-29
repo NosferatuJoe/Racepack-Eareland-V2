@@ -1,13 +1,13 @@
 /////////////////////////
 //Eareland V2 Race Pack//
-//Version 1.0.0B       //
+//Version 1.0.1B       //
 /////////////////////////
 
 block speed_health
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Human Predator - [Block] Skill: 1 (START)
+		wcs_log [Race]: Human Predator - [Block] Skill: 1 (START)
 	}
 	es wcs_setfx speed event_var(userid) = server_var(wcs_speed) 0
 	es wcs_setfx health event_var(userid) + 30 0
@@ -16,7 +16,7 @@ block speed_health
 	es_tell event_var(userid) #multi #green [WCS]: #lightgreen Conditioning - Increased your speed and health
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Human Predator - [Block] Skill: 1 (END)
+		wcs_log [Race]: Human Predator - [Block] Skill: 1 (END)
 	}
 }
 
@@ -24,7 +24,7 @@ block drug
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Human Predator - [Block] Skill: 2 (START)
+		wcs_log [Race]: Human Predator - [Block] Skill: 2 (START)
 	}
 	if (server_var(wcs_dice2) <= server_var(wcs_chance)) do
 	{
@@ -54,7 +54,7 @@ block drug
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Human Predator - [Block] Skill: 2 (END)
+		wcs_log [Race]: Human Predator - [Block] Skill: 2 (END)
 	}
 }
 
@@ -62,7 +62,7 @@ block anti_invisibility
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Human Predator - [Block] Skill: 3 (START)
+		wcs_log [Race]: Human Predator - [Block] Skill: 3 (START)
 	}
 	if (server_var(wcs_dice3) <= server_var(wcs_chance)) do
 	{
@@ -80,7 +80,7 @@ block anti_invisibility
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Human Predator - [Block] Skill: 3 (END)
+		wcs_log [Race]: Human Predator - [Block] Skill: 3 (END)
 	}
 }
 
@@ -88,7 +88,7 @@ block teleport
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Human Predator - [Block] Skill: 4 (START)
+		wcs_log [Race]: Human Predator - [Block] Skill: 4 (START)
 	}
 	es_xset wcs_range 1400
 	es_getplayerlocation wcs_x1 wcs_y1 wcs_z1 server_var(wcs_userid)
@@ -210,6 +210,6 @@ block teleport
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Human Predator - [Block] Skill: 4 (END)
+		wcs_log [Race]: Human Predator - [Block] Skill: 4 (END)
 	}
 }

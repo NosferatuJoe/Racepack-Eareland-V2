@@ -1,19 +1,19 @@
 /////////////////////////
 //Eareland V2 Race Pack//
-//Version 1.0.0B       //
+//Version 1.0.1B       //
 /////////////////////////
 
 block spawn
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Darkrai - [Block] Spawn (START)
+		wcs_log [Race]: Darkrai - [Block] Spawn (START)
 	}
 	es wcsgroup set evasion event_var(userid) 0
 	es wcsgroup set evasion_chance event_var(userid) 0
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Darkrai - [Block] Spawn (END)
+		wcs_log [Race]: Darkrai - [Block] Spawn (END)
 	}
 }
 
@@ -21,13 +21,13 @@ block onchange
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Darkrai - [Block] OnChange (START)
+		wcs_log [Race]: Darkrai - [Block] OnChange (START)
 	}
 	es wcsgroup set evasion server_var(wcs_userid) 0
 	es wcsgroup set evasion_chance server_var(wcs_userid) 0
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Darkrai - [Block] OnChange (END)
+		wcs_log [Race]: Darkrai - [Block] OnChange (END)
 	}
 }
 
@@ -35,7 +35,7 @@ block blind
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Darkrai - [Block] Skill: 1 (START)
+		wcs_log [Race]: Darkrai - [Block] Skill: 1 (START)
 	}
 	if (server_var(wcs_dice) <= server_var(wcs_chance)) do
 	{
@@ -52,7 +52,7 @@ block blind
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Darkrai - [Block] Skill: 1 (END)
+		wcs_log [Race]: Darkrai - [Block] Skill: 1 (END)
 	}
 }
 
@@ -60,7 +60,7 @@ block speed_temp_dark
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Darkrai - [Block] Skill: 2 (START)
+		wcs_log [Race]: Darkrai - [Block] Skill: 2 (START)
 	}
 	if (server_var(wcs_dice2) <= server_var(wcs_chance)) do
 	{
@@ -93,7 +93,7 @@ block speed_temp_dark
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Darkrai - [Block] Skill: 2 (END)
+		wcs_log [Race]: Darkrai - [Block] Skill: 2 (END)
 	}
 }
 
@@ -101,14 +101,14 @@ block evade
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Darkrai - [Block] Skill: 3 (START)
+		wcs_log [Race]: Darkrai - [Block] Skill: 3 (START)
 	}
 	es wcsgroup set evasion event_var(userid) 1
 	es wcsgroup set evasion_chance event_var(userid) server_var(wcs_chance)
 	es_tell event_var(userid) #multi #green [WCS]: #lightgreen Evasion - Gives you server_var(wcs_chance)% chance to dodge incoming attacks
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Darkrai - [Block] Skill: 3 (END)
+		wcs_log [Race]: Darkrai - [Block] Skill: 3 (END)
 	}
 }
 
@@ -116,7 +116,7 @@ block damage
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Darkrai - [Block] Skill: 4 (START)
+		wcs_log [Race]: Darkrai - [Block] Skill: 4 (START)
 	}
 	if (server_var(wcs_dice4) <= 10) do
 	{
@@ -143,6 +143,6 @@ block damage
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Darkrai - [Block] Skill: 4 (END)
+		wcs_log [Race]: Darkrai - [Block] Skill: 4 (END)
 	}
 }
