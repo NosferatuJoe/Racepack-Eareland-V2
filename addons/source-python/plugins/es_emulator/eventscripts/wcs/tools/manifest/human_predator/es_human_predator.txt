@@ -32,11 +32,11 @@ block drug
 		{
 			if (event_var(es_attackerdead) = 0) do
 			{
-				es wcs_fade event_var(userid) 255 0 0 175 .5 1
-				es_delayed .5 wcs_fade event_var(userid) 0 255 0 175 .5 1
-				es_delayed 1 wcs_fade event_var(userid) 0 0 255 175 .5 1
-				es_delayed 1.5 wcs_fade event_var(userid) 150 0 155 155 .5 1
-				es_delayed 2 wcs_fade event_var(userid) 0 155 155 155 .5 1
+				es wcs_fade event_var(userid) 255 0 0 175 1 1
+				es_delayed .5 wcs_fade event_var(userid) 0 255 0 175 1 1
+				es_delayed 1 wcs_fade event_var(userid) 0 0 255 175 1 1
+				es_delayed 1.5 wcs_fade event_var(userid) 150 0 155 155 1 1
+				es_delayed 2 wcs_fade event_var(userid) 0 155 155 155 1 1
 				es_tell event_var(attacker) #multi #green [WCS]: #lightgreen Drug - You drugged your enemy
 				es_tell event_var(userid) #multi #green [WCS]: #lightgreen Drug - You have been drugged
 				es_getplayerlocation wcs_x2 wcs_y2 wcs_z2 event_var(userid)
