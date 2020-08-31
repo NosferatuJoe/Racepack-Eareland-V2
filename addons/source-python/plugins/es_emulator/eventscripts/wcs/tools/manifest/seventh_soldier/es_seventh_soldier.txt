@@ -124,23 +124,20 @@ block nades
 
 event weapon_fire
 {
-	es wcsgroup get hegrenade_resupply wcs_tmp event_var(userid)
-	if (server_var(wcs_tmp) => 1) do
+	if (event_var(es_userweapon) == weapon_hegrenade) do
 	{
 		ifx true(wcs_race_debugging) do
 		{
 			wcs_log [Race]: Seventh Soldier - [Block] Event Weapon_Fire (START)
 		}
-		es_xmath wcs_tmp - 1
-		es wcsgroup set hegrenade_resupply event_var(userid) server_var(wcs_tmp)
 		es wcsgroup get hegrenade_resupply wcs_tmp event_var(userid)
-		es_tell event_var(userid) #multi #green[WCS]: #lightgreenYou have server_var(wcs_tmp) grenades left!
 		if (server_var(wcs_tmp) => 1) do
 		{
-			if (event_var(es_userweapon) == weapon_flashbang) do
-			{
-				es_delayed .5 es_give event_var(userid) weapon_flashbang
-			}
+			es wcsgroup get hegrenade_resupply wcs_tmp event_var(userid)
+			es_xmath wcs_tmp - 1
+			es wcsgroup set hegrenade_resupply event_var(userid) server_var(wcs_tmp)
+			es_tell event_var(userid) #multi #green[WCS]: #lightgreenYou have server_var(wcs_tmp) grenades left!
+			es_delayed .5 es_give event_var(userid) weapon_hegrenade
 		}
 		if (server_var(wcs_tmp) == 0) do
 		{
