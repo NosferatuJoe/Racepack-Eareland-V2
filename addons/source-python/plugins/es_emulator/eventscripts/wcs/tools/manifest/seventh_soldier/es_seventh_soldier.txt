@@ -9,6 +9,7 @@ block spawn
 	{
 		wcs_log [Race]: Seventh Soldier - [Block] Spawn (START)
 	}
+	es wcsgroup set seventh_soldier_player event_var(userid) 1
 	es wcsgroup set hegrenade_resupply event_var(userid) 0
 	es_getplayerlocation wcs_x1 wcs_y1 wcs_z1 event_var(userid)
 	es_xmath wcs_z1 + 8
@@ -56,6 +57,7 @@ block death
 	{
 		wcs_log [Race]: Seventh Soldier - [Block] Death (START)
 	}
+	es wcsgroup set seventh_soldier_player event_var(userid) 0
 	es wcsgroup set hegrenade_resupply event_var(userid) 0
 	ifx true(wcs_race_debugging) do
 	{
@@ -69,6 +71,7 @@ block onchange
 	{
 		wcs_log [Race]: Seventh Soldier - [Block] OnChange (START)
 	}
+	es wcsgroup set seventh_soldier_player server_var(wcs_userid) 0
 	es wcsgroup set hegrenade_resupply server_var(wcs_userid) 0
 	ifx true(wcs_race_debugging) do
 	{
@@ -130,19 +133,28 @@ event weapon_fire
 		{
 			wcs_log [Race]: Seventh Soldier - [Block] Event Weapon_Fire (START)
 		}
-		es wcsgroup get hegrenade_resupply wcs_tmp event_var(userid)
-		if (server_var(wcs_tmp) => 1) do
+		es wcsgroup get seventh_soldier_player wcs_tmp3 event_var(userid)
+		if (server_var(wcs_tmp3) == 1) do
 		{
 			es wcsgroup get hegrenade_resupply wcs_tmp event_var(userid)
-			es_xmath wcs_tmp - 1
-			es wcsgroup set hegrenade_resupply event_var(userid) server_var(wcs_tmp)
-			es_tell event_var(userid) #multi #green[WCS]: #lightgreenYou have server_var(wcs_tmp) grenades left!
-			es_delayed .5 es_give event_var(userid) weapon_hegrenade
-		}
-		if (server_var(wcs_tmp) == 0) do
-		{
-			es wcs_removeweapon event_var(userid) 4
-			es_tell event_var(userid) #multi #green[WCS]: #lightgreenYou've ran out of grenades!
+			if (server_var(wcs_tmp) => 1) do
+			{
+				es_xmath wcs_tmp - 1
+				es wcsgroup set hegrenade_resupply event_var(userid) server_var(wcs_tmp)
+				es_delayed .5 es_give event_var(userid) weapon_hegrenade
+			}
+			if (server_var(wcs_tmp) > 1) do
+			{
+				es_tell event_var(userid) #multi #green [WCS]: #lightgreen You have server_var(wcs_tmp) grenades left!
+			}
+			if (server_var(wcs_tmp) == 1) do 
+			{
+				es_tell event_var(userid) #multi #green [WCS]: #lightgreen This is your last grenade!
+			}
+			if (server_var(wcs_tmp) == 0) do
+			{
+				es_tell event_var(userid) #multi #green [WCS]: #lightgreen You have no more grenades!
+			}
 		}
 		ifx true(wcs_race_debugging) do
 		{
