@@ -1,6 +1,6 @@
 /////////////////////////
 //Eareland V2 Race Pack//
-//Version 1.0.4B       //
+//Version 1.0.5B       //
 /////////////////////////
 
 block spawn
@@ -169,7 +169,7 @@ block upgrade
 	{
 		wcs_log [Race]: Seventh Soldier - [Block] Skill: 4 (START)
 	}
-	es wcs_getweapon server_var(wcs_userid) wcs_tmp1 1
+	es playerget primary wcs_tmp1 server_var(wcs_userid)
 	es_getgame wcs_gamecheck
 	if ("Counter-Strike: Source" in server_var(wcs_gamecheck)) do
 	{
