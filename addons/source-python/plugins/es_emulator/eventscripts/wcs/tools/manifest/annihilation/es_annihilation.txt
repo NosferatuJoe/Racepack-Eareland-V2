@@ -56,9 +56,16 @@ block damage
 				es damage event_var(userid) server_var(wcs_dmg) 1 event_var(attacker)
 				es wcs_centertell event_var(attacker) Rocket launcher did server_var(wcs_dmg) additional damage
 				es_getplayerlocation wcs_x1 wcs_y1 wcs_z1 event_var(userid)
-				es_getplayerteam wcs_team event_var(attacker)
-				if (server_var(wcs_team) = 2) then es_xset wcs_targetteam #ct
-				if (server_var(wcs_team) = 3) then es_xset wcs_targetteam #t
+				ifx true(wcs_ffa_enabled) do
+				{
+					es_xset wcs_targetteam #alive
+				}
+				ifx false(wcs_ffa_enabled) do
+				{
+					es_getplayerteam wcs_team event_var(attacker)
+					if (server_var(wcs_team) = 2) then es_xset wcs_targetteam #ct
+					if (server_var(wcs_team) = 3) then es_xset wcs_targetteam #t
+				}
 				es wcs_nearcoord wcs_player server_var(wcs_targetteam) server_var(wcs_x1) server_var(wcs_y1) server_var(wcs_z1) 125 "es_xdoblock wcs/tools/manifest/annihilation/sound"
 				es_playsound event_var(userid) ambient\explosions\explode_9.wav .5
 				es_xmath wcs_z1 + 20
