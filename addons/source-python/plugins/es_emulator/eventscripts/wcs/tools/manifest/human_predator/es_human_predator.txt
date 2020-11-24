@@ -1,6 +1,6 @@
 /////////////////////////
 //Eareland V2 Race Pack//
-//Version 1.0.5B       //
+//Version 1.0.6B       //
 /////////////////////////
 
 block speed_health
@@ -73,8 +73,8 @@ block anti_invisibility
 				es wcs_color event_var(userid) 255 255 255 255 0
 				es_tell event_var(userid) #multi #green [WCS]: #lightgreen Anti-Invisibility - Turned you completely visible!
 				es_tell event_var(attacker) #multi #green [WCS]: #lightgreen Anti-Invisibility - Made your enemy completely visible!
-				es_playsound event_var(userid) wcs/tidetotem.wav 1
-				es_playsound event_var(attacker) wcs/tidetotem.wav .8
+				es_playsound event_var(userid) wcs/tidetotem.mp3 1
+				es_playsound event_var(attacker) wcs/tidetotem.mp3 .8
 			}
 		}
 	}
