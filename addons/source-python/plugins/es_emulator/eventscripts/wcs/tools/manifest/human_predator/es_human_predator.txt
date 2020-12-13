@@ -71,8 +71,8 @@ block anti_invisibility
 			if (event_var(es_attackerdead) = 0) do
 			{
 				es wcs_color event_var(userid) 255 255 255 255 0
-				es_tell event_var(userid) #multi #green [WCS]: #lightgreen Anti-Invisibility - Turned you completely visible!
-				es_tell event_var(attacker) #multi #green [WCS]: #lightgreen Anti-Invisibility - Made your enemy completely visible!
+				es_tell event_var(userid) #multi #green [WCS]: #lightgreen Reflex - You made the attacker visible!
+				es_tell event_var(attacker) #multi #green [WCS]: #lightgreen Reflex - A Human Predator turned you visible!
 				es_playsound event_var(userid) wcs/tidetotem.mp3 1
 				es_playsound event_var(attacker) wcs/tidetotem.mp3 .8
 			}
