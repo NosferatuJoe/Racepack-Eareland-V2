@@ -99,7 +99,7 @@ block damage_based_on_hp
 				}
 				if (server_var(wcs_tmp2) >= 81) do
 				{
-					if (server_var(wcs_tmp2) <= 95)
+					if (server_var(wcs_tmp2) <= 95) do
 					{
 						es_xrand wcs_dmg 25 35
 					}
